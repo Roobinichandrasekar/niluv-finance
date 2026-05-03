@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niluv Finance – Your Trusted Loan DSA Partner</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --gold: #c8a96e;
+    --gold-light: #e8c98a;
+    --cream: #faf8f4;
+    --warm-white: #fff9f0;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a4a6a;
+    --text-light: #8888aa;
+    --border: rgba(200,169,110,0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 999;
+    background: rgba(10,22,40,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  .nav-logo span { color: #fff; font-weight: 400; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    padding: 0.5rem 1.4rem; border-radius: 4px;
+    font-size: 0.85rem; font-weight: 600;
+    text-decoration: none; letter-spacing: 0.5px;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 5% 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(200,169,110,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 10% 80%, rgba(100,150,255,0.06) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(200,169,110,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(200,169,110,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 720px; }
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid var(--border);
+    color: var(--gold);
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+    padding: 0.4rem 1rem; border-radius: 2px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700; line-height: 1.1;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero-title em { color: var(--gold); font-style: italic; }
+  .hero-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,0.6);
+    line-height: 1.7; max-width: 540px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 0.9rem 2rem; border-radius: 4px;
+    font-weight: 600; font-size: 0.9rem; text-decoration: none;
+    transition: all 0.2s; letter-spacing: 0.3px;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    border: 1px solid rgba(200,169,110,0.5); color: var(--gold);
+    padding: 0.9rem 2rem; border-radius: 4px;
+    font-weight: 500; font-size: 0.9rem; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); background: rgba(200,169,110,0.08); }
+  .hero-stats {
+    position: relative; z-index: 2;
+    display: flex; gap: 3rem; margin-top: 4rem;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+  .stat-item { border-left: 2px solid var(--gold); padding-left: 1rem; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 700; color: var(--gold);
+  }
+  .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); letter-spacing: 0.5px; margin-top: 0.2rem; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 90px 5%; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700; line-height: 1.2;
+    color: var(--navy); margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 1rem; color: var(--text-mid); line-height: 1.7;
+    max-width: 560px;
+  }
+  .section-header { margin-bottom: 3rem; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--warm-white); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .about-visual {
+    background: var(--navy);
+    border-radius: 8px; padding: 3rem;
+    position: relative; overflow: hidden;
+  }
+  .about-visual::before {
+    content: '';
+    position: absolute; top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,169,110,0.2), transparent 70%);
+  }
+  .about-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 700; color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .about-designation { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 2rem; }
+  .about-contact-item {
+    display: flex; align-items: center; gap: 0.8rem;
+    color: rgba(255,255,255,0.8); font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  .about-contact-item .icon {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(200,169,110,0.15); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; flex-shrink: 0;
+  }
+  .about-text p {
+    color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; font-size: 0.97rem;
+  }
+  .about-values {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;
+  }
+  .value-item {
+    background: var(--navy);
+    border: 1px solid var(--border);
+    border-radius: 6px; padding: 1rem 1.2rem;
+  }
+  .value-icon { font-size: 1.3rem; margin-bottom: 0.4rem; }
+  .value-title { font-weight: 600; color: #fff; font-size: 0.85rem; }
+  .value-desc { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.2rem; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--cream); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .service-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px; padding: 2rem;
+    transition: all 0.3s; position: relative; overflow: hidden;
+    cursor: pointer;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-color: transparent; }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 10px;
+    background: rgba(200,169,110,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin-bottom: 1.2rem;
+  }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .service-short { font-size: 0.83rem; color: var(--text-mid); line-height: 1.6; margin-bottom: 1rem; }
+  .service-tag {
+    display: inline-block; background: rgba(200,169,110,0.1);
+    color: var(--gold); font-size: 0.7rem; font-weight: 600;
+    padding: 0.25rem 0.6rem; border-radius: 3px; letter-spacing: 0.5px;
+  }
+
+  /* ── BLOG ── */
+  #blog { background: var(--navy); }
+  #blog .section-title { color: #fff; }
+  #blog .section-sub { color: rgba(255,255,255,0.5); }
+  .blog-tabs {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem;
+  }
+  .blog-tab {
+    padding: 0.5rem 1.2rem; border-radius: 4px;
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.5px;
+    border: 1px solid rgba(200,169,110,0.3);
+    color: rgba(255,255,255,0.6);
+    background: none; cursor: pointer; transition: all 0.2s;
+  }
+  .blog-tab.active, .blog-tab:hover {
+    background: var(--gold); color: var(--navy); border-color: var(--gold);
+  }
+  .blog-articles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .blog-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(200,169,110,0.15);
+    border-radius: 8px; overflow: hidden;
+    transition: all 0.3s;
+  }
+  .blog-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+  .blog-card-top {
+    padding: 1.8rem;
+    border-bottom: 1px solid rgba(200,169,110,0.1);
+  }
+  .blog-loan-tag {
+    display: inline-block;
+    background: rgba(200,169,110,0.15); color: var(--gold);
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+    padding: 0.25rem 0.7rem; border-radius: 3px; margin-bottom: 0.9rem;
+  }
+  .blog-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.35;
+    margin-bottom: 0.7rem;
+  }
+  .blog-excerpt { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.65; }
+  .blog-card-body { padding: 1.5rem 1.8rem; }
+  .blog-section-title {
+    font-size: 0.75rem; font-weight: 600; color: var(--gold); letter-spacing: 1.5px;
+    text-transform: uppercase; margin-bottom: 0.8rem;
+  }
+  .doc-list { list-style: none; }
+  .doc-list li {
+    font-size: 0.82rem; color: rgba(255,255,255,0.65);
+    padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5;
+  }
+  .doc-list li:last-child { border-bottom: none; }
+  .doc-list li::before {
+    content: '✓'; color: var(--gold); font-size: 0.7rem;
+    flex-shrink: 0; margin-top: 0.15rem;
+  }
+  .eligibility-list { list-style: none; }
+  .eligibility-list li {
+    font-size: 0.82rem; color: rgba(255,255,255,0.65);
+    padding: 0.3rem 0; display: flex; gap: 0.6rem; align-items: flex-start;
+  }
+  .eligibility-list li::before {
+    content: '→'; color: var(--gold-light); font-size: 0.7rem; flex-shrink: 0; margin-top: 0.1rem;
+  }
+
+  /* ── FULL BLOG SECTION ── */
+  #blog-detail { background: var(--cream); }
+  .blog-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .blog-article {
+    background: #fff; border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.07);
+    padding: 2.5rem; margin-bottom: 2rem;
+  }
+  .blog-article-label {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.7rem;
+  }
+  .blog-article-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 0.8rem; line-height: 1.3;
+  }
+  .blog-article p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 0.8rem; }
+  .blog-article h4 { font-size: 0.85rem; font-weight: 600; color: var(--navy); margin: 1.2rem 0 0.5rem; }
+  .blog-article ul {
+    margin-left: 1rem; margin-bottom: 0.8rem;
+  }
+  .blog-article ul li {
+    font-size: 0.85rem; color: var(--text-mid); margin-bottom: 0.3rem; line-height: 1.6;
+  }
+  .blog-article .highlight-box {
+    background: rgba(200,169,110,0.08); border-left: 3px solid var(--gold);
+    padding: 0.8rem 1rem; border-radius: 0 4px 4px 0;
+    font-size: 0.84rem; color: var(--text-dark); margin: 1rem 0;
+  }
+
+  /* ── PROCESS ── */
+  #process { background: var(--warm-white); }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .process-step { text-align: center; padding: 1.5rem; }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--navy); border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 700; color: var(--gold);
+  }
+  .step-title { font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; font-size: 0.95rem; }
+  .step-desc { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; }
+
+  /* ── WHY US ── */
+  #why { background: var(--cream); }
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .why-card {
+    padding: 2rem; border-radius: 8px;
+    background: var(--navy);
+    border: 1px solid rgba(200,169,110,0.15);
+  }
+  .why-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .why-title { font-weight: 600; color: var(--gold); font-size: 1rem; margin-bottom: 0.5rem; }
+  .why-desc { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--navy); }
+  #contact .section-title { color: #fff; }
+  #contact .section-sub { color: rgba(255,255,255,0.5); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .contact-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(200,169,110,0.2);
+    border-radius: 8px; padding: 2.5rem;
+  }
+  .contact-item {
+    display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem;
+  }
+  .contact-icon {
+    width: 44px; height: 44px; border-radius: 8px; flex-shrink: 0;
+    background: rgba(200,169,110,0.12); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+  }
+  .contact-info-label {
+    font-size: 0.72rem; color: var(--gold); font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.25rem;
+  }
+  .contact-info-value {
+    color: #fff; font-size: 0.95rem; font-weight: 500;
+  }
+  .contact-info-value a { color: #fff; text-decoration: none; }
+  .contact-info-value a:hover { color: var(--gold); }
+  .contact-form-area h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem;
+  }
+  .form-row { margin-bottom: 1rem; }
+  .form-row label { font-size: 0.78rem; color: var(--gold); font-weight: 500; letter-spacing: 1px; display: block; margin-bottom: 0.4rem; }
+  .form-row input, .form-row select, .form-row textarea {
+    width: 100%; background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(200,169,110,0.25); border-radius: 5px;
+    color: #fff; font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem; padding: 0.75rem 1rem; outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-row input::placeholder, .form-row textarea::placeholder { color: rgba(255,255,255,0.25); }
+  .form-row select option { background: var(--navy); }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--gold); }
+  .form-row textarea { resize: vertical; min-height: 100px; }
+  .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-submit {
+    width: 100%; background: var(--gold); color: var(--navy);
+    border: none; border-radius: 5px; padding: 0.9rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 700;
+    cursor: pointer; transition: background 0.2s; letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: var(--gold-light); }
+  .form-success {
+    display: none; text-align: center; padding: 2rem;
+    color: var(--gold); font-size: 1.1rem; font-weight: 500;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #070f1c;
+    padding: 2.5rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid rgba(200,169,110,0.1);
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 700; color: var(--gold);
+  }
+  .footer-brand span { color: rgba(255,255,255,0.5); font-weight: 400; }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    font-size: 0.8rem; color: rgba(255,255,255,0.4);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    .about-grid, .contact-grid, .blog-detail-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .services-grid, .blog-articles, .why-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .hero-stats { gap: 2rem; flex-wrap: wrap; }
+  }
+  @media (max-width: 600px) {
+    .services-grid, .blog-articles, .why-grid, .process-steps { grid-template-columns: 1fr; }
+    .about-values, .form-grid-2 { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="niluv-logo.png" alt="Niluv Finance Logo" height="52" style="flex-shrink:0;object-fit:contain;mix-blend-mode:lighten;filter:brightness(1.1) contrast(1.05);margin-right:2px;">
+    Niluv <span>Finance</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#partners">Our Lenders</a></li>
+    <li><a href="#blog">Loan Guides</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Apply Now</a>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🏅 Trusted DSA Partner · Chennai</div>
+    <h1 class="hero-title">Your <em>Loan</em> Journey<br>Starts Here</h1>
+    <p class="hero-sub">Niluv Finance is a Direct Selling Agent (DSA) connecting individuals and businesses with the right loan products — fast, transparent, and hassle-free. Personal Loans, Business Loans, Home Loans & more.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get a Free Consultation</a>
+      <a href="#services" class="btn-outline">Explore Loan Products →</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">6+</div>
+      <div class="stat-label">Loan Products</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Fast</div>
+      <div class="stat-label">Approvals & Processing</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Free Advisory Service</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-name">Padmini K</div>
+      <div class="about-designation">Founder & Principal DSA Agent · Niluv Finance</div>
+      <div class="about-contact-item">
+        <div class="icon">📞</div>
+        <span>+91 81222 88545</span>
+      </div>
+      <div class="about-contact-item">
+        <div class="icon">✉️</div>
+        <span>m2padma2017@gmail.com</span>
+      </div>
+      <div class="about-contact-item">
+        <div class="icon">📍</div>
+        <span>Chennai, Tamil Nadu</span>
+      </div>
+      <div style="margin-top:2rem; border-top: 1px solid rgba(200,169,110,0.2); padding-top:1.5rem;">
+        <div style="font-size:0.72rem; color: rgba(255,255,255,0.4); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:0.5rem;">Products Offered</div>
+        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.6rem;">
+          <span style="background:rgba(200,169,110,0.1); color:var(--gold); font-size:0.72rem; padding:0.25rem 0.7rem; border-radius:3px; font-weight:600;">PL</span>
+          <span style="background:rgba(200,169,110,0.1); color:var(--gold); font-size:0.72rem; padding:0.25rem 0.7rem; border-radius:3px; font-weight:600;">BL</span>
+          <span style="background:rgba(200,169,110,0.1); color:var(--gold); font-size:0.72rem; padding:0.25rem 0.7rem; border-radius:3px; font-weight:600;">PRL</span>
+          <span style="background:rgba(200,169,110,0.1); color:var(--gold); font-size:0.72rem; padding:0.25rem 0.7rem; border-radius:3px; font-weight:600;">HL</span>
+          <span style="background:rgba(200,169,110,0.1); color:var(--gold); font-size:0.72rem; padding:0.25rem 0.7rem; border-radius:3px; font-weight:600;">LAP</span>
+          <span style="background:rgba(200,169,110,0.1); color:var(--gold); font-size:0.72rem; padding:0.25rem 0.7rem; border-radius:3px; font-weight:600;">EDU</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">Who We Are</div>
+      <h2 class="section-title">A Partner You Can<br>Trust With Your Goals</h2>
+      <p>Niluv Finance is a proprietorship firm led by Padmini K, operating as a registered Direct Selling Agent (DSA). We act as your bridge between financial aspirations and the lending institutions that can make them real.</p>
+      <p>Whether you're a salaried professional looking for a personal loan, a business owner needing working capital, or a family planning to buy a home — we identify the best loan product for your unique situation, guide you through the paperwork, and ensure swift processing.</p>
+      <p>Our service is completely free for borrowers. We work on behalf of banks and NBFCs to source quality loan applications, which means you get expert guidance at zero cost.</p>
+      <div class="about-values">
+        <div class="value-item">
+          <div class="value-icon">🎯</div>
+          <div class="value-title">Right Fit</div>
+          <div class="value-desc">We match you to the best lender for your profile</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">⚡</div>
+          <div class="value-title">Fast Processing</div>
+          <div class="value-desc">Minimal delays, maximum efficiency</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🔒</div>
+          <div class="value-title">Confidential</div>
+          <div class="value-desc">Your data is safe and never misused</div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">💬</div>
+          <div class="value-title">Free Advice</div>
+          <div class="value-desc">No fees — ever — for borrower consultation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header">
+    <div class="section-label">Our Products</div>
+    <h2 class="section-title">Loan Solutions for Every Need</h2>
+    <p class="section-sub">From personal milestones to business expansion — we offer six loan products suited to different life stages and goals.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">💼</div>
+      <div class="service-name">Personal Loan</div>
+      <p class="service-short">Unsecured loans for any personal need — travel, medical, wedding, or debt consolidation. Quick disbursals with minimal documentation.</p>
+      <span class="service-tag">Up to ₹40 Lakhs</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <div class="service-name">Business Loan</div>
+      <p class="service-short">Fuel your business growth. Working capital, equipment purchase, or expansion — we help small and medium businesses access credit fast.</p>
+      <span class="service-tag">Up to ₹2 Crore</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">👩‍⚕️</div>
+      <div class="service-name">Professional Loan</div>
+      <p class="service-short">Tailored for doctors, CAs, lawyers, and other professionals. Set up your clinic, chamber, or practice with specialized credit facilities.</p>
+      <span class="service-tag">For Salaried Professionals</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <div class="service-name">Home Loan</div>
+      <p class="service-short">Buy your dream home or construct a new one. Long tenures, competitive interest rates, and assistance with property documentation.</p>
+      <span class="service-tag">Up to 30 Year Tenure</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏦</div>
+      <div class="service-name">Loan Against Property</div>
+      <p class="service-short">Leverage your existing property to get high-value funds at lower interest rates. Residential, commercial, or industrial property accepted.</p>
+      <span class="service-tag">Up to 70% of Property Value</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎓</div>
+      <div class="service-name">Education Loan</div>
+      <p class="service-short">Invest in your future. Education loans for domestic and international studies — covering tuition, hostel, and other academic expenses.</p>
+      <span class="service-tag">India &amp; Abroad</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- LENDING PARTNERS -->
+<section id="partners" style="background:var(--navy); padding:70px 5%;">
+  <div class="section-header">
+    <div class="section-label" style="color:var(--gold);">Our Network</div>
+    <h2 class="section-title" style="color:#fff;">Tied Up With India's Leading Lenders</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5);">We work with a curated network of banks, NBFCs, and fintech lenders — so we always find the right match for your profile and requirement.</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:0.5rem;">
+
+    <!-- Bajaj Finserv -->
+    <div style="background:var(--navy-mid); border:1px solid rgba(200,169,110,0.15); border-radius:10px; padding:2rem; text-align:center;">
+      <div style="width:52px;height:52px;border-radius:10px;background:rgba(200,169,110,0.12);border:1px solid rgba(200,169,110,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 1rem;">🏢</div>
+      <div style="color:#fff;font-weight:600;font-size:1rem;margin-bottom:0.4rem;">Bajaj Finserv</div>
+      <div style="color:var(--gold);font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;">NBFC</div>
+    </div>
+
+    <!-- Paisabazaar -->
+    <div style="background:var(--navy-mid); border:1px solid rgba(200,169,110,0.15); border-radius:10px; padding:2rem; text-align:center;">
+      <div style="width:52px;height:52px;border-radius:10px;background:rgba(200,169,110,0.12);border:1px solid rgba(200,169,110,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 1rem;">💹</div>
+      <div style="color:#fff;font-weight:600;font-size:1rem;margin-bottom:0.4rem;">Paisabazaar</div>
+      <div style="color:var(--gold);font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;">Fintech</div>
+    </div>
+
+    <!-- Ru Loans -->
+    <div style="background:var(--navy-mid); border:1px solid rgba(200,169,110,0.15); border-radius:10px; padding:2rem; text-align:center;">
+      <div style="width:52px;height:52px;border-radius:10px;background:rgba(200,169,110,0.12);border:1px solid rgba(200,169,110,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 1rem;">⚡</div>
+      <div style="color:#fff;font-weight:600;font-size:1rem;margin-bottom:0.4rem;">Ru Loans</div>
+      <div style="color:var(--gold);font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;">Fintech</div>
+    </div>
+
+    <!-- Fibe -->
+    <div style="background:var(--navy-mid); border:1px solid rgba(200,169,110,0.15); border-radius:10px; padding:2rem; text-align:center;">
+      <div style="width:52px;height:52px;border-radius:10px;background:rgba(200,169,110,0.12);border:1px solid rgba(200,169,110,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 1rem;">📱</div>
+      <div style="color:#fff;font-weight:600;font-size:1rem;margin-bottom:0.4rem;">Fibe</div>
+      <div style="color:var(--gold);font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;">Fintech</div>
+    </div>
+
+  </div>
+
+  <!-- Bottom note -->
+  <div style="margin-top:2rem; text-align:center; padding:1.2rem 2rem; background:rgba(200,169,110,0.06); border:1px solid rgba(200,169,110,0.15); border-radius:8px;">
+    <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; margin:0;">
+      Our multi-lender network means <span style="color:var(--gold);font-weight:600;">more options, better rates, and higher approval chances</span> — regardless of your profile.
+    </p>
+  </div>
+</section>
+
+<!-- BLOG / LOAN GUIDES (Card Overview) -->
+<section id="blog">
+  <div class="section-header">
+    <div class="section-label" style="color:var(--gold);">Loan Guides</div>
+    <h2 class="section-title">Everything You Need to Know</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5);">Documents, eligibility criteria, and who qualifies — explained simply for each product.</p>
+  </div>
+  <div class="blog-articles">
+
+    <div class="blog-card">
+      <div class="blog-card-top">
+        <div class="blog-loan-tag">Personal Loan</div>
+        <div class="blog-title">How to Get a Personal Loan in India — A Complete Guide</div>
+        <div class="blog-excerpt">Personal loans are one of the most accessible forms of credit in India, requiring no collateral and disbursed within 24–72 hours for eligible applicants.</div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-section-title">Documents Required</div>
+        <ul class="doc-list">
+          <li>Aadhaar Card & PAN Card (KYC)</li>
+          <li>Last 3 months salary slips (salaried)</li>
+          <li>Last 6 months bank statements</li>
+          <li>Form 16 / ITR (last 2 years)</li>
+          <li>Passport-size photograph</li>
+          <li>Employment letter / offer letter</li>
+        </ul>
+        <div class="blog-section-title" style="margin-top:1rem;">Who Can Apply?</div>
+        <ul class="eligibility-list">
+          <li>Salaried employees aged 21–60</li>
+          <li>Min. monthly income ₹15,000+</li>
+          <li>Min. 1 year of employment</li>
+          <li>CIBIL score 700 and above</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-card-top">
+        <div class="blog-loan-tag">Business Loan</div>
+        <div class="blog-title">Business Loans for SMEs — What You Need to Know</div>
+        <div class="blog-excerpt">Whether you're a manufacturer, trader, or service provider, business loans can provide the working capital needed to scale your operations confidently.</div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-section-title">Documents Required</div>
+        <ul class="doc-list">
+          <li>Aadhaar, PAN (proprietor/director)</li>
+          <li>Business registration / GST certificate</li>
+          <li>Last 2 years ITR with computation</li>
+          <li>Last 12 months bank statements</li>
+          <li>Audited balance sheet & P&L</li>
+          <li>Business address proof</li>
+        </ul>
+        <div class="blog-section-title" style="margin-top:1rem;">Who Can Apply?</div>
+        <ul class="eligibility-list">
+          <li>Self-employed / business owners</li>
+          <li>Business aged 3+ years preferred</li>
+          <li>Annual turnover ₹10 lakhs+</li>
+          <li>Positive CIBIL / credit history</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-card-top">
+        <div class="blog-loan-tag">Professional Loan</div>
+        <div class="blog-title">Professional Loans — Built for Doctors, CAs & Lawyers</div>
+        <div class="blog-excerpt">Professional loans recognize your expertise and future earning potential, offering higher loan amounts and better terms than standard personal loans.</div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-section-title">Documents Required</div>
+        <ul class="doc-list">
+          <li>Aadhaar & PAN Card</li>
+          <li>Professional degree / registration certificate</li>
+          <li>Practice address proof</li>
+          <li>Last 2 years ITR</li>
+          <li>Bank statements (6–12 months)</li>
+          <li>MCI / ICAI / Bar Council registration</li>
+        </ul>
+        <div class="blog-section-title" style="margin-top:1rem;">Who Can Apply?</div>
+        <ul class="eligibility-list">
+          <li>Doctors, Dentists, CAs, CS</li>
+          <li>Lawyers, Architects, Engineers</li>
+          <li>Minimum 2 years of practice</li>
+          <li>Age: 25–65 years</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-card-top">
+        <div class="blog-loan-tag">Home Loan</div>
+        <div class="blog-title">Home Loans Made Simple — Buy, Build or Renovate</div>
+        <div class="blog-excerpt">A home loan is your biggest financial commitment. Understanding eligibility and documents in advance ensures a smoother, faster approval process.</div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-section-title">Documents Required</div>
+        <ul class="doc-list">
+          <li>Aadhaar, PAN & address proof</li>
+          <li>Salary slips (3 months) / ITR 2 years</li>
+          <li>Bank statements (6 months)</li>
+          <li>Sale agreement / allotment letter</li>
+          <li>Property documents & NOC</li>
+          <li>Approved building plan copy</li>
+        </ul>
+        <div class="blog-section-title" style="margin-top:1rem;">Who Can Apply?</div>
+        <ul class="eligibility-list">
+          <li>Salaried or self-employed individuals</li>
+          <li>Age: 21–70 years (at loan closure)</li>
+          <li>Stable income and CIBIL 700+</li>
+          <li>Property with clear title</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-card-top">
+        <div class="blog-loan-tag">Loan Against Property</div>
+        <div class="blog-title">LAP — Unlock the Value Locked in Your Property</div>
+        <div class="blog-excerpt">Loan Against Property (LAP) lets you pledge your existing property to access large amounts of credit at interest rates lower than personal loans.</div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-section-title">Documents Required</div>
+        <ul class="doc-list">
+          <li>Aadhaar & PAN of all applicants</li>
+          <li>Property ownership documents (chain)</li>
+          <li>Last 3 years ITR & bank statements</li>
+          <li>Existing loan statements (if any)</li>
+          <li>Property tax paid receipts</li>
+          <li>Encumbrance certificate</li>
+        </ul>
+        <div class="blog-section-title" style="margin-top:1rem;">Who Can Apply?</div>
+        <ul class="eligibility-list">
+          <li>Owners of residential/commercial property</li>
+          <li>Salaried or self-employed borrowers</li>
+          <li>Clear & marketable property title</li>
+          <li>Loan: up to 60–70% of property value</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <div class="blog-card-top">
+        <div class="blog-loan-tag">Education Loan</div>
+        <div class="blog-title">Education Loans — Invest in Your Future Without Worry</div>
+        <div class="blog-excerpt">Education loans cover tuition, accommodation, books, and living expenses — helping students pursue their academic dreams in India or abroad.</div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-section-title">Documents Required</div>
+        <ul class="doc-list">
+          <li>Student & co-applicant KYC (Aadhaar, PAN)</li>
+          <li>Admission letter from institution</li>
+          <li>Fee structure / cost of education</li>
+          <li>Academic mark sheets (10th, 12th, UG)</li>
+          <li>Income proof of co-applicant (parent)</li>
+          <li>Scholarship documents (if applicable)</li>
+        </ul>
+        <div class="blog-section-title" style="margin-top:1rem;">Who Can Apply?</div>
+        <ul class="eligibility-list">
+          <li>Indian students (age 18–35)</li>
+          <li>Admission to recognized institution</li>
+          <li>Co-applicant required (parent/guardian)</li>
+          <li>Covers India & abroad courses</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DETAILED BLOG ARTICLES -->
+<section id="blog-detail">
+  <div class="section-header">
+    <div class="section-label">In Depth</div>
+    <h2 class="section-title">Loan Knowledge Hub</h2>
+    <p class="section-sub">Read our detailed guides to make informed borrowing decisions.</p>
+  </div>
+
+  <div class="blog-article">
+    <div class="blog-article-label">Personal Loan Guide</div>
+    <div class="blog-article-title">Personal Loan vs Credit Card — Which is Better for Your Needs?</div>
+    <p>When you face an unexpected expense, two common options are a personal loan or a credit card. Understanding the difference helps you choose the most cost-effective option.</p>
+    <h4>When to Choose a Personal Loan</h4>
+    <ul>
+      <li>Large one-time expenses (₹1 lakh and above)</li>
+      <li>When you need structured EMI repayment over 1–5 years</li>
+      <li>Lower interest rate compared to credit card revolving balance</li>
+      <li>Consolidating multiple debts into one monthly payment</li>
+    </ul>
+    <h4>Interest Rate Overview</h4>
+    <p>Personal loan interest rates in India typically range from 10.5% to 24% per annum depending on your credit score, income, employer category, and the lender. A CIBIL score above 750 significantly improves your chances of getting the best rates.</p>
+    <div class="highlight-box">
+      💡 <strong>Niluv Finance Tip:</strong> Always check your CIBIL score before applying. A soft enquiry won't hurt your score, and knowing your score helps us recommend the right lender for you.
+    </div>
+    <h4>How to Improve Your Loan Eligibility</h4>
+    <ul>
+      <li>Maintain a healthy CIBIL score (700+)</li>
+      <li>Keep existing EMIs below 40% of monthly income</li>
+      <li>Avoid multiple loan applications simultaneously</li>
+      <li>Ensure salary is credited regularly via bank transfer</li>
+    </ul>
+  </div>
+
+  <div class="blog-article">
+    <div class="blog-article-label">Business Loan Guide</div>
+    <div class="blog-article-title">How to Prepare Your Business for a Loan Application</div>
+    <p>Many business owners lose out on timely funding because their financial documentation isn't loan-ready. A little preparation can go a long way toward faster approval and better interest rates.</p>
+    <h4>Step 1: Get Your Books in Order</h4>
+    <p>Lenders primarily look at your ITR, GST returns, and bank statements. Ensure all returns are filed on time and income is reflected accurately. Discrepancies between ITR and bank statements raise red flags.</p>
+    <h4>Step 2: Understand the Types of Business Loans</h4>
+    <ul>
+      <li><strong>Term Loan:</strong> Fixed amount, fixed EMI, for capital expenditure</li>
+      <li><strong>Working Capital Loan:</strong> Revolving credit for day-to-day operations</li>
+      <li><strong>MSME / Government Scheme Loans:</strong> CGTMSE, Mudra, etc. for smaller businesses</li>
+      <li><strong>Overdraft Facility:</strong> Flexible credit line against your current account</li>
+    </ul>
+    <div class="highlight-box">
+      💡 <strong>Niluv Finance Tip:</strong> Contact us before applying anywhere. We'll assess your profile and recommend the lender most likely to approve you at the best rate — saving you unnecessary CIBIL hits.
+    </div>
+    <h4>What Lenders Look For</h4>
+    <ul>
+      <li>3+ years of stable business vintage</li>
+      <li>Consistent monthly bank credits</li>
+      <li>Low cheque bounce history</li>
+      <li>Positive net profit in ITR</li>
+      <li>Clear GST filings without large gaps</li>
+    </ul>
+  </div>
+
+  <div class="blog-article">
+    <div class="blog-article-label">Home Loan Guide</div>
+    <div class="blog-article-title">5 Things to Know Before Applying for a Home Loan</div>
+    <p>Buying a home is one of the most significant financial decisions of your life. Knowing these five things before you apply can save you time, money, and stress.</p>
+    <h4>1. Loan-to-Value (LTV) Ratio</h4>
+    <p>Banks typically fund 75–90% of the property's value depending on loan amount. You will need to arrange the remaining 10–25% as down payment from your own savings.</p>
+    <h4>2. Fixed vs Floating Interest Rate</h4>
+    <ul>
+      <li><strong>Fixed Rate:</strong> EMI stays constant — good for budgeting, but usually higher</li>
+      <li><strong>Floating Rate:</strong> Tied to RBI repo rate — changes over time, usually cheaper long-term</li>
+    </ul>
+    <h4>3. Legal Due Diligence is Crucial</h4>
+    <p>The lender will conduct a legal check on the property. Ensure the sale deed, EC, approved plan, and tax receipts are in order before you approach us. Issues here delay approvals significantly.</p>
+    <div class="highlight-box">
+      💡 <strong>Niluv Finance Tip:</strong> We can help you do a preliminary document check before submitting to the lender — identifying issues early saves weeks of delay.
+    </div>
+    <h4>4. Check Your FOIR (Fixed Obligation to Income Ratio)</h4>
+    <p>Banks allow a maximum of 50–65% of your gross income toward all EMIs combined. If you have existing loans, factor in how the new home loan EMI affects this ratio.</p>
+    <h4>5. Balance Transfer Option</h4>
+    <p>If you already have a home loan at a high interest rate, it can be transferred to another lender at a lower rate. Even a 0.5% reduction over 20 years saves lakhs in interest.</p>
+  </div>
+
+  <div class="blog-article">
+    <div class="blog-article-label">LAP Guide</div>
+    <div class="blog-article-title">Loan Against Property — The Smart Way to Access Large Funds</div>
+    <p>LAP (Loan Against Property) is one of the most underutilized credit products in India. Many property owners don't realize that their idle asset can unlock significant capital at lower interest rates.</p>
+    <h4>Key Advantages of LAP</h4>
+    <ul>
+      <li>Interest rates typically 9–13% — much lower than personal loans</li>
+      <li>Higher loan amounts — up to ₹5 crore or more</li>
+      <li>Longer repayment tenures (up to 15–20 years)</li>
+      <li>Can be used for any purpose — business, education, medical, etc.</li>
+    </ul>
+    <h4>Common Misconceptions</h4>
+    <ul>
+      <li><strong>Myth:</strong> "I'll lose my property" — <strong>Fact:</strong> You continue to own and use the property; it's only a security charge.</li>
+      <li><strong>Myth:</strong> "LAP takes too long" — <strong>Fact:</strong> With proper documentation, it can be processed in 10–20 business days.</li>
+      <li><strong>Myth:</strong> "Only residential property is accepted" — <strong>Fact:</strong> Commercial and industrial properties also qualify.</li>
+    </ul>
+    <div class="highlight-box">
+      💡 <strong>Niluv Finance Tip:</strong> If your business needs more than ₹30 lakhs, LAP is almost always a better option than an unsecured business loan — lower rate, longer tenure, bigger amount.
+    </div>
+  </div>
+
+  <div class="blog-article">
+    <div class="blog-article-label">Education Loan Guide</div>
+    <div class="blog-article-title">Funding Your Child's Education — A Guide for Parents</div>
+    <p>Education costs in India and abroad have risen significantly over the last decade. An education loan helps bridge the gap between your savings and the total cost of education without derailing your other financial goals.</p>
+    <h4>What Expenses Does an Education Loan Cover?</h4>
+    <ul>
+      <li>Tuition and examination fees</li>
+      <li>Hostel and accommodation costs</li>
+      <li>Books, laptop, and study materials</li>
+      <li>Travel expenses (for overseas studies)</li>
+      <li>Caution deposit (subject to conditions)</li>
+    </ul>
+    <h4>Tax Benefit Under Section 80E</h4>
+    <p>Interest paid on education loans qualifies for tax deduction under Section 80E of the Income Tax Act — with no upper limit on the amount, for up to 8 consecutive assessment years. This makes education loans particularly tax-efficient.</p>
+    <div class="highlight-box">
+      💡 <strong>Niluv Finance Tip:</strong> Many parents don't know that the Section 80E deduction applies to the co-applicant (parent) as well — meaning you can claim the deduction even if the student isn't earning yet.
+    </div>
+    <h4>Moratorium Period</h4>
+    <p>Education loans typically have a moratorium period — you don't need to pay EMI during the course duration plus 6–12 months after completion. Repayment begins after the student starts earning, making it very manageable.</p>
+  </div>
+
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-header" style="text-align:center;">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title" style="margin:0 auto 1rem;">Simple. Fast. Transparent.</h2>
+    <p class="section-sub" style="margin:0 auto;">From your first enquiry to loan disbursement — here's what you can expect when you work with Niluv Finance.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <div class="step-title">Free Consultation</div>
+      <p class="step-desc">Call or WhatsApp us. Tell us your requirement — loan type, amount, and timeline. We'll assess your profile and advise the best options.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <div class="step-title">Document Collection</div>
+      <p class="step-desc">We guide you on exactly which documents are needed. No guesswork. We help you prepare a complete, lender-ready file.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <div class="step-title">Lender Submission</div>
+      <p class="step-desc">We submit your application to the most suitable lender. We track progress, follow up, and keep you informed at every step.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <div class="step-title">Disbursement</div>
+      <p class="step-desc">Once approved, the loan is disbursed directly to your account. We remain available post-disbursal for any queries or assistance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-header">
+    <div class="section-label">Why Niluv Finance</div>
+    <h2 class="section-title">The Niluv Difference</h2>
+    <p class="section-sub">What sets us apart from walking into a bank yourself — or using a random loan agent.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🆓</div>
+      <div class="why-title">Completely Free for Borrowers</div>
+      <p class="why-desc">We are compensated by the lender, not the borrower. Our consultation, documentation guidance, and follow-up are 100% free for you.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏦</div>
+      <div class="why-title">Multiple Lender Access</div>
+      <p class="why-desc">We work with multiple banks and NBFCs. This means we can shop your profile to the best-fit lender — higher approval odds, better rates.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📋</div>
+      <div class="why-title">Expert Documentation Support</div>
+      <p class="why-desc">A rejected application hurts your CIBIL score. We review your documents before submission to avoid common rejection triggers.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📞</div>
+      <div class="why-title">Dedicated Follow-Up</div>
+      <p class="why-desc">We don't disappear after submission. We track your application, respond to lender queries, and keep you updated until disbursal.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">⏱️</div>
+      <div class="why-title">Fast Turnaround</div>
+      <p class="why-desc">For eligible profiles, personal and business loans can be approved and disbursed in as little as 3–5 working days.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤝</div>
+      <div class="why-title">Long-Term Relationship</div>
+      <p class="why-desc">We build lasting relationships. Past clients come back to us for their next loan — and refer their friends and family with confidence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Ready to Talk?</h2>
+    <p class="section-sub">Reach out today for a free, no-obligation consultation. We'll respond within a few hours.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-item">
+        <div class="contact-icon">👤</div>
+        <div>
+          <div class="contact-info-label">Your Point of Contact</div>
+          <div class="contact-info-value">Padmini K</div>
+          <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:0.2rem;">Founder, Niluv Finance</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-info-label">Phone / WhatsApp</div>
+          <div class="contact-info-value"><a href="tel:+918122288545">+91 81222 88545</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-info-label">Email</div>
+          <div class="contact-info-value"><a href="mailto:m2padma2017@gmail.com">m2padma2017@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-item" style="margin-bottom:0;">
+        <div class="contact-icon">⏰</div>
+        <div>
+          <div class="contact-info-label">Working Hours</div>
+          <div class="contact-info-value">Mon – Sat, 9 AM – 7 PM</div>
+        </div>
+      </div>
+      <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(200,169,110,0.15);">
+        <div style="font-size:0.75rem; color:var(--gold); font-weight:600; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:1rem;">Quick Connect</div>
+        <a href="https://wa.me/918122288545?text=Hi%20Padmini,%20I%20want%20to%20enquire%20about%20a%20loan." target="_blank"
+           style="display:block; background:rgba(37,211,102,0.15); border:1px solid rgba(37,211,102,0.3); color:#25d366;
+           padding:0.75rem 1.2rem; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.88rem; text-align:center;">
+          💬 WhatsApp Us Now
+        </a>
+        <a href="mailto:m2padma2017@gmail.com?subject=Loan Enquiry from Website"
+           style="display:block; background:rgba(200,169,110,0.08); border:1px solid rgba(200,169,110,0.25); color:var(--gold);
+           padding:0.75rem 1.2rem; border-radius:6px; text-decoration:none; font-weight:600; font-size:0.88rem; text-align:center; margin-top:0.8rem;">
+          ✉️ Send Us an Email
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form-area">
+      <h3>Send a Quick Enquiry</h3>
+      <div id="enquiry-form">
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label>Your Name</label>
+            <input type="text" id="fname" placeholder="Full name">
+          </div>
+          <div class="form-row">
+            <label>Phone Number</label>
+            <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Email Address</label>
+          <input type="email" id="femail" placeholder="yourmail@example.com">
+        </div>
+        <div class="form-row">
+          <label>Loan Type</label>
+          <select id="floan">
+            <option value="">-- Select Loan Product --</option>
+            <option>Personal Loan</option>
+            <option>Business Loan</option>
+            <option>Professional Loan</option>
+            <option>Home Loan</option>
+            <option>Loan Against Property</option>
+            <option>Education Loan</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Loan Amount Required</label>
+          <input type="text" id="famount" placeholder="e.g. ₹5,00,000">
+        </div>
+        <div class="form-row">
+          <label>Message (Optional)</label>
+          <textarea id="fmessage" placeholder="Tell us a bit about your requirement..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Submit Enquiry →</button>
+      </div>
+      <div class="form-success" id="form-success">
+        ✅ Thank you for reaching out!<br>
+        <span style="font-size:0.9rem; color:rgba(255,255,255,0.5); font-weight:400;">Padmini will contact you within a few hours.</span>
+      </div>
+      <p style="font-size:0.75rem; color:rgba(255,255,255,0.3); margin-top:1rem; line-height:1.6;">
+        By submitting this form you agree to be contacted by Niluv Finance for loan-related enquiries. We do not share your data with third parties.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand" style="display:flex;align-items:center;gap:7px;">
+Niluv <span>Finance</span>
+  </div>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#blog">Loan Guides</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Niluv Finance. Proprietary DSA Firm. All rights reserved.</div>
+</footer>
+
+<script>
+  // Form submission → Google Sheets via Apps Script
+  async function submitForm() {
+    const name   = document.getElementById('fname').value.trim();
+    const phone  = document.getElementById('fphone').value.trim();
+    const email  = document.getElementById('femail').value.trim();
+    const loan   = document.getElementById('floan').value;
+    const amount = document.getElementById('famount').value.trim();
+    const msg    = document.getElementById('fmessage').value.trim();
+
+    if (!name || !phone || !loan) {
+      alert('Please fill in your name, phone number, and loan type.');
+      return;
+    }
+
+    // Disable button to prevent double submit
+    const btn = document.querySelector('.form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxsSdIke4klwVbl0q7t1PLkGGwdga64wDoLPLAjoFDKfxlvnk-DkjYaaJL9TPK-MQhCJQ/exec';
+
+    const formData = new FormData();
+    formData.append('Name',        name);
+    formData.append('Phone',       phone);
+    formData.append('Email',       email || '');
+    formData.append('LoanType',    loan);
+    formData.append('LoanAmount',  amount || '');
+    formData.append('Message',     msg || '');
+    formData.append('SubmittedAt', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
+
+    try {
+      await fetch(SHEET_URL, { method: 'POST', body: formData, mode: 'no-cors' });
+      // no-cors means we won't get a readable response, but the sheet will receive the data
+      document.getElementById('enquiry-form').style.display = 'none';
+      document.getElementById('form-success').style.display  = 'block';
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Submit Enquiry →';
+      alert('Something went wrong. Please try again or contact us directly.');
+    }
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .blog-card, .why-card, .process-step, .blog-article').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+
+  // Blog tab filtering (visual only)
+  document.querySelectorAll('.blog-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.blog-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
